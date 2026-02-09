@@ -35,3 +35,7 @@ my_list.remove("cyber")
 # 5. Sort the list in ascending order and print it
 my_list.sort()
 print(my_list)
+
+# 6.
+my_list.reverse()
+print(my_list)

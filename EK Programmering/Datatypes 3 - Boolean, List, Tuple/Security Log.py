@@ -11,6 +11,9 @@
 #4. How many times did ‘3.100.186.196’ access the system?
 
 #Security access log (chronologically sorted)
+from collections import Counter
+
+
 access_log = [
     '189.19.202.26', '124.124.86.154', '111.123.147.92', '191.194.49.89',
     '191.194.49.89', '3.100.186.196', '17.102.131.131', '170.40.162.9',
@@ -33,3 +36,17 @@ print(
     "Times 3.100.186.196 accessed the system:",
     access_log.count('3.100.186.196')
 )
+
+# --- Bonus: Frequency statistics for all IPs ---
+
+# Count occurrences of each IP
+ip_counts = Counter(access_log)
+
+
+# Sort IPs by frequency (most common first)
+sorted_ip_counts = ip_counts.most_common()  # Returns list of tuples: (IP, count)
+
+#
+print() #"\nIP access frequency (most to least):"
+for ip, count in sorted_ip_counts:
+    print(f"{ip}: {count}")
